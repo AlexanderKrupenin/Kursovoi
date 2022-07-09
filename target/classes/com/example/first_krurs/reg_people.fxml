@@ -7,52 +7,61 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Reg_people_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.first_krurs.Reg_people_controller">
     <children>
         <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
             <children>
-                <Label fx:id="text_1_reg" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
+                <Label fx:id="text_1_reg" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa"/>
             </children>
         </AnchorPane>
         <Label fx:id="text_3_reg" layoutX="312.0" layoutY="14.0" text="Регистрация пользователя" textFill="#05396b">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
-        <Button fx:id="reg_button_reg" layoutX="325.0" layoutY="272.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #05396b;" text="Зарегестрироваться" textFill="#fafafa">
+        <Button fx:id="reg_button_reg" layoutX="325.0" layoutY="272.0" mnemonicParsing="false" prefHeight="40.0"
+                prefWidth="194.0" style="-fx-background-color: #05396b;" text="Зарегестрироваться" textFill="#fafafa">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Button>
-      <TextField fx:id="surname_reg" layoutX="289.0" layoutY="52.0" prefHeight="26.0" prefWidth="266.0" promptText="Фамилия" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="first_name_reg" layoutX="289.0" layoutY="93.0" prefHeight="26.0" prefWidth="266.0" promptText="Имя" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="second_name_reg" layoutX="289.0" layoutY="138.0" prefHeight="26.0" prefWidth="266.0" promptText="Отчество" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
-      <PasswordField fx:id="password_reg" layoutX="289.0" layoutY="233.0" prefHeight="26.0" prefWidth="266.0" promptText="Пароль" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </PasswordField>
-      <Button fx:id="reg_back_reg" layoutX="157.0" layoutY="360.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <TextField fx:id="login_name_reg" layoutX="289.0" layoutY="187.0" prefHeight="26.0" prefWidth="266.0" promptText="Логин" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </TextField>
+        <TextField fx:id="surname_reg" layoutX="289.0" layoutY="52.0" prefHeight="26.0" prefWidth="266.0"
+                   promptText="Фамилия" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+            <font>
+                <Font name="System Bold Italic" size="12.0"/>
+            </font>
+        </TextField>
+        <TextField fx:id="first_name_reg" layoutX="289.0" layoutY="93.0" prefHeight="26.0" prefWidth="266.0"
+                   promptText="Имя" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+            <font>
+                <Font name="System Bold Italic" size="12.0"/>
+            </font>
+        </TextField>
+        <TextField fx:id="second_name_reg" layoutX="289.0" layoutY="138.0" prefHeight="26.0" prefWidth="266.0"
+                   promptText="Отчество" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+            <font>
+                <Font name="System Bold Italic" size="12.0"/>
+            </font>
+        </TextField>
+        <PasswordField fx:id="password_reg" layoutX="289.0" layoutY="233.0" prefHeight="26.0" prefWidth="266.0"
+                       promptText="Пароль" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+            <font>
+                <Font name="System Bold Italic" size="12.0"/>
+            </font>
+        </PasswordField>
+        <Button fx:id="reg_back_reg" layoutX="157.0" layoutY="360.0" mnemonicParsing="false"
+                style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+        <TextField fx:id="login_name_reg" layoutX="289.0" layoutY="187.0" prefHeight="26.0" prefWidth="266.0"
+                   promptText="Логин" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+            <font>
+                <Font name="System Bold Italic" size="12.0"/>
+            </font>
+        </TextField>
     </children>
 </AnchorPane>

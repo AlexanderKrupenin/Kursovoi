@@ -8,51 +8,53 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Controller">
-   <children>
-      <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
-         <children>
-            <Label fx:id="text_1_view" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
-         </children>
-      </AnchorPane>
-      <Label fx:id="text_2_view" layoutX="310.0" layoutY="14.0" text="Авторизация пользователя" textFill="#05396b">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="text_3_view" layoutX="312.0" layoutY="200.0" text="Регистрация пользователя" textFill="#05396b">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="login_field" layoutX="299.0" layoutY="58.0" prefHeight="26.0" prefWidth="246.0" promptText="Логин" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font></TextField>
-       
-      <PasswordField fx:id="password_field" layoutX="299.0" layoutY="92.0" prefHeight="26.0" prefWidth="246.0" promptText="Пароль" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </PasswordField>
-      <Button fx:id="autfit_button_view" layoutX="325.0" layoutY="142.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #05396b;" text="Авторизоваться" textFill="#fafafa">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="reg_button_view" layoutX="325.0" layoutY="234.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #05396b;" text="Регистрация" textFill="#fafafa">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label fx:id="text_4_view" layoutX="348.0" layoutY="285.0" text="Вход в роли гостя" textFill="#05396b">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="guest_button_view" layoutX="324.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #05396b;" text="Войти как гость" textFill="#fafafa">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-   </children>
+    <children>
+        <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
+            <children>
+                <Label fx:id="text_1_view" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
+            </children>
+        </AnchorPane>
+        <Label fx:id="text_2_view" layoutX="310.0" layoutY="14.0" text="Авторизация пользователя" textFill="#05396b">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="text_3_view" layoutX="312.0" layoutY="200.0" text="Регистрация пользователя" textFill="#05396b">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="login_field" layoutX="299.0" layoutY="58.0" prefHeight="26.0" prefWidth="246.0" promptText="Логин" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font>
+        </TextField>
+
+        <PasswordField fx:id="password_field" layoutX="299.0" layoutY="92.0" prefHeight="26.0" prefWidth="246.0" promptText="Пароль" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+            <font>
+                <Font name="System Bold Italic" size="12.0" />
+            </font>
+        </PasswordField>
+        <Button fx:id="autfit_button_view" layoutX="325.0" layoutY="142.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #05396b;" text="Авторизоваться" textFill="#fafafa">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="reg_button_view" layoutX="325.0" layoutY="234.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #05396b;" text="Регистрация" textFill="#fafafa">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Label fx:id="text_4_view" layoutX="348.0" layoutY="285.0" text="Вход в роли гостя" textFill="#05396b">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="guest_button_view" layoutX="324.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="194.0" style="-fx-background-color: #05396b;" text="Войти как гость" textFill="#fafafa">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <Label fx:id="error" layoutX="372.0" layoutY="118.0" text="Неверные данные" textFill="#69051c" visible="false" />
+    </children>
 </AnchorPane>

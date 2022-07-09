@@ -5,37 +5,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Student_controller">
-   <children>
-      <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
-         <children>
-            <Label fx:id="text_1_student" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
-         </children>
-      </AnchorPane>
-      <Label fx:id="text_3_student" layoutX="291.0" layoutY="14.0" text="Вы зашли в роли пользователя" textFill="#05396b">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="student_back_student" layoutX="157.0" layoutY="360.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="quote_list_student" layoutX="316.0" layoutY="53.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Смотреть свои цитаты" textFill="#fafafa">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="quote_red_student" layoutX="316.0" layoutY="98.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Редактировать свои цитаты" textFill="#fafafa">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="fio_red_student" layoutX="316.0" layoutY="145.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Редактировать свои данные" textFill="#fafafa">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.first_krurs.Student_controller">
+    <children>
+        <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
+            <children>
+                <Label fx:id="text_1_student" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa"/>
+            </children>
+        </AnchorPane>
+        <Label fx:id="text_3_student" layoutX="291.0" layoutY="14.0" text="Вы зашли в роли пользователя"
+               textFill="#05396b">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Button fx:id="student_back_student" layoutX="157.0" layoutY="360.0" mnemonicParsing="false"
+                style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="quote_list_student" layoutX="316.0" layoutY="53.0" mnemonicParsing="false" prefHeight="30.0"
+                prefWidth="208.0" style="-fx-background-color: #05396b;" text="Смотреть свои цитаты" textFill="#fafafa">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="quote_red_student" layoutX="316.0" layoutY="98.0" mnemonicParsing="false" prefHeight="30.0"
+                prefWidth="208.0" style="-fx-background-color: #05396b;" text="Редактировать свои цитаты"
+                textFill="#fafafa">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="fio_red_student" layoutX="316.0" layoutY="145.0" mnemonicParsing="false" prefHeight="30.0"
+                prefWidth="208.0" style="-fx-background-color: #05396b;" text="Редактировать свои данные"
+                textFill="#fafafa">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

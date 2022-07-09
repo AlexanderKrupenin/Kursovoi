@@ -12,6 +12,9 @@ public class Verificator_controller {
     private Button fio_red_ver;
 
     @FXML
+    private Button group_red_ver;
+
+    @FXML
     private Button quote_add_ver;
 
     @FXML
