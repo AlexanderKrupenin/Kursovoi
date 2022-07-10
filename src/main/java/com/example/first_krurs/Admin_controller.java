@@ -46,9 +46,9 @@ public class Admin_controller {
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            stage.setResizable(false);
+            //stage.setResizable(false);
             stage.showAndWait();
-           // stage.close();
+            //stage.close();
         });
 
         admin_back_admin.setOnAction(actionEvent -> {

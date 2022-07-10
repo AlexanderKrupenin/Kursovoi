@@ -6,58 +6,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.first_krurs.Add_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Add_controller">
     <children>
         <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
             <children>
-                <Label fx:id="text_1_quote" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa"/>
+                <Label fx:id="text_1_quote" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
             </children>
         </AnchorPane>
         <Label fx:id="text_3_quote" layoutX="318.0" layoutY="14.0" text="Добавление цитаты" textFill="#05396b">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="add_back_add" layoutX="157.0" layoutY="360.0" mnemonicParsing="false"
-                style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
+        <Button fx:id="add_back_add" layoutX="157.0" layoutY="360.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="quote_add_add" layoutX="231.0" layoutY="359.0" mnemonicParsing="false" prefHeight="30.0"
-                prefWidth="137.0" style="-fx-background-color: #05396b;" text="Добавить цитату" textFill="#fafafa">
+        <Button fx:id="quote_add_add" layoutX="231.0" layoutY="359.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="137.0" style="-fx-background-color: #05396b;" text="Добавить цитату" textFill="#fafafa">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </Button>
-        <TextField fx:id="new_quote_add_quote" alignment="TOP_LEFT" layoutX="157.0" layoutY="51.0" prefHeight="247.0"
-                   prefWidth="534.0" promptText="Цитата"
-                   style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;">
+        <TextField fx:id="new_quote_add_quote" alignment="CENTER" layoutX="157.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="534.0" promptText="Цитата" style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;" AnchorPane.bottomAnchor="101.80000000000001" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="51.0">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </TextField>
-        <TextField fx:id="surname_add" alignment="TOP_LEFT" layoutX="157.0" layoutY="306.0" prefHeight="31.0"
-                   prefWidth="150.0" promptText="Фамилия преподавателя"
-                   style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;">
+        <TextField fx:id="surname_add" alignment="TOP_LEFT" layoutX="157.0" layoutY="306.0" prefHeight="31.0" prefWidth="150.0" promptText="Фамилия преподавателя" style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </TextField>
-        <TextField fx:id="first_name_add" alignment="TOP_LEFT" layoutX="349.0" layoutY="306.0" prefHeight="31.0"
-                   prefWidth="150.0" promptText="Имя преподавателя"
-                   style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;">
+        <TextField fx:id="first_name_add" alignment="TOP_LEFT" layoutX="349.0" layoutY="306.0" prefHeight="31.0" prefWidth="150.0" promptText="Имя преподавателя" style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </TextField>
-        <TextField fx:id="second_name_add" alignment="TOP_LEFT" layoutX="535.0" layoutY="306.0" prefHeight="31.0"
-                   prefWidth="150.0" promptText="Отчетство преподавателя"
-                   style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;">
+        <TextField fx:id="second_name_add" alignment="TOP_LEFT" layoutX="535.0" layoutY="306.0" prefHeight="31.0" prefWidth="150.0" promptText="Отчетство преподавателя" style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </TextField>
     </children>

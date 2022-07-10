@@ -9,4 +9,5 @@ public class BD {
     public static final String USER_LOGIN_NAME = "login_name";
     public static final String USER_PASSWORD = "password";
     public static final String USER_ROOT = "user";
+    public static final String USER_GROUP = "group_people";
 }

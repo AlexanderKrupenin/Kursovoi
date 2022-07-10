@@ -31,6 +31,10 @@ public class Verificator_controller {
 
     @FXML
     void initialize() {
+        ver_back_ver.setOnAction(actionEvent -> {
+            ver_back_ver.getScene().getWindow().hide();
+            Main.guest_window.show();
+        });
     }
 
 }

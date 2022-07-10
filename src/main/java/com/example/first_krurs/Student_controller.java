@@ -28,6 +28,10 @@ public class Student_controller {
 
     @FXML
     void initialize() {
+        student_back_student.setOnAction(actionEvent -> {
+            student_back_student.getScene().getWindow().hide();
+            Main.guest_window.show();
+        });
     }
 
 }
