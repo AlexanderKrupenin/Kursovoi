@@ -15,8 +15,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.TableColumn;
 
+import javax.xml.transform.Result;
 import java.io.FileReader;
+import java.sql.*;
 import java.util.PropertyPermission;
+import java.util.Set;
 
 public class Guest_controller {
     private ObservableList<User> usersData = FXCollections.observableArrayList();
@@ -53,17 +56,55 @@ public class Guest_controller {
             guest_back_guest.getScene().getWindow().hide();
             Main.guest_window.show();
         });
+        GetQuoteFromDataBase();
 
-        usersData.add(new User("тест","тест","1","тест","тест","тест","тест"));
 
+    }
+
+    public void SetQuoteTo(){
         first_name_guest.setCellValueFactory(new PropertyValueFactory<User,String>("first_name"));
         gata_guest.setCellValueFactory(new PropertyValueFactory<User,String>("date"));
         id_guest.setCellValueFactory(new PropertyValueFactory<User,String>("id"));
-        qoute_surname_guest.setCellValueFactory(new PropertyValueFactory<User,String>("quote"));
+        qoute_surname_guest.setCellValueFactory(new PropertyValueFactory<User,String>("surname"));
         quote_guest.setCellValueFactory(new PropertyValueFactory<User,String>("quote"));
         second_name_guest.setCellValueFactory(new PropertyValueFactory<User,String>("second_name"));
         subject_guest.setCellValueFactory(new PropertyValueFactory<User,String>("subject"));
         table_guest.setItems(usersData);
+    }
+
+    public void GetQuoteFromDataBase()
+    {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:mysql://std-mysql.ist.mospolytech.ru:3306/std_2008_kursovoi",
+                    "std_2008_kursovoi", "12345678");
+
+            ResultSet GetInfo;
+            Statement statement = connection.createStatement();
+
+            try{
+                GetInfo = statement.executeQuery("SELECT * FROM quote");
+                while (GetInfo.next()){
+                    usersData.add(new User(/*Айди*/GetInfo.getString(1),/*Фамилия*/GetInfo.getString(2),
+                            /*Имя*/GetInfo.getString(3),/*Отчество*/GetInfo.getString(4),
+                            /*Предмет*/GetInfo.getString(5), /*Дата*/GetInfo.getString(6),
+                            /*Цитата*/GetInfo.getString(7)));
+                    SetQuoteTo();
+                }
+
+            }
+            catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+
+
+            //ResultSet result = statement.executeQuery(query);
+            connection.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public class User {
@@ -74,7 +115,7 @@ public class Guest_controller {
         private String quote;
         private String second_name;
         private String subject;
-        public User(String first_name,String date, String id, String surname, String quote, String second_name, String subject)
+        public User(String id, String surname,String first_name, String second_name, String subject, String date, String quote)
         {
             this.first_name = first_name;
             this.date = date;

@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Guest_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Guest_controller">
     <children>
-        <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
+        <AnchorPane prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
             <children>
                 <Label fx:id="text_1_guest" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
             </children>
@@ -19,12 +19,12 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="guest_back_guest" layoutX="157.0" layoutY="360.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
+        <Button fx:id="guest_back_guest" layoutX="155.0" layoutY="556.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-      <TableView fx:id="table_guest" layoutX="155.0" layoutY="42.0" prefHeight="301.0" prefWidth="530.0">
+      <TableView fx:id="table_guest" layoutX="155.0" layoutY="42.0" prefHeight="510.0" prefWidth="540.0">
         <columns>
           <TableColumn fx:id="id_guest" prefWidth="43.20001220703125" text="id" />
           <TableColumn fx:id="qoute_surname_guest" prefWidth="47.20001220703125" text="Фамилия" />
@@ -32,8 +32,9 @@
             <TableColumn fx:id="second_name_guest" prefWidth="46.39996337890625" text="Отчество" />
             <TableColumn fx:id="subject_guest" prefWidth="59.199951171875" text="Предмет" />
             <TableColumn fx:id="gata_guest" prefWidth="43.99993896484375" text="Дата" />
-            <TableColumn fx:id="quote_guest" prefWidth="237.60006713867188" text="Цитата" />
+            <TableColumn fx:id="quote_guest" prefWidth="251.19998168945312" text="Цитата" />
         </columns>
       </TableView>
+      <AnchorPane layoutX="699.0" prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;" />
     </children>
 </AnchorPane>

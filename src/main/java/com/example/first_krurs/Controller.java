@@ -126,6 +126,7 @@ public class Controller {
                         pass = reg.getString(2);
                         root = reg.getString(3);
                         if (log.equals(login) && pass.equals(newPassword)) {
+                            SaveLogin saveLogin = new SaveLogin(login);
                             System.out.println("Успешно");
                             if (root.equals("student"))
                                 ChangeScene("student.fxml");

@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Add_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Add_controller">
     <children>
-        <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
+        <AnchorPane prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
             <children>
                 <Label fx:id="text_1_quote" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
             </children>
@@ -28,7 +28,7 @@
                 <Font size="14.0" />
             </font>
         </Button>
-        <TextField fx:id="new_quote_add_quote" alignment="CENTER" layoutX="157.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="534.0" promptText="Цитата" style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;" AnchorPane.bottomAnchor="101.80000000000001" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="8.600000000000023" AnchorPane.topAnchor="51.0">
+        <TextField fx:id="new_quote_add_quote" alignment="CENTER" layoutX="157.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="532.0" promptText="Цитата" style="-fx-background-color: #fafafa; -fx-border-color: #05396b; -fx-border-radius: 3; -fx-text-fill: #05396b;" AnchorPane.bottomAnchor="299.0" AnchorPane.leftAnchor="157.0" AnchorPane.rightAnchor="161.0" AnchorPane.topAnchor="51.0">
             <font>
                 <Font size="14.0" />
             </font>
@@ -48,5 +48,6 @@
                 <Font size="14.0" />
             </font>
         </TextField>
+      <AnchorPane layoutX="699.0" prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;" />
     </children>
 </AnchorPane>

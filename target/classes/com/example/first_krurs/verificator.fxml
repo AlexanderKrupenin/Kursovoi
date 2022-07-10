@@ -2,12 +2,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Verificator_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Verificator_controller">
     <children>
-        <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
+        <AnchorPane prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
             <children>
                 <Label fx:id="text_1_ver" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
             </children>
@@ -17,30 +20,62 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="ver_back_ver" layoutX="157.0" layoutY="360.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
+        <Button fx:id="ver_back_ver" layoutX="158.0" layoutY="556.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="quote_add_ver" layoutX="314.0" layoutY="48.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Добавить цитату" textFill="#fafafa">
+        <Button fx:id="fio_red_ver" layoutX="425.0" layoutY="555.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="264.0" style="-fx-background-color: #05396b;" text="Редактировать свои данные" textFill="#fafafa">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="quote_list_ver" layoutX="314.0" layoutY="92.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Смотреть цитаты" textFill="#fafafa">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Button>
-        <Button fx:id="fio_red_ver" layoutX="314.0" layoutY="136.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Редактировать свои данные" textFill="#fafafa">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Button>
-      <Button fx:id="group_red_ver" layoutX="314.0" layoutY="178.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Изменить цитаты группы" textFill="#fafafa">
+      <Button fx:id="group_red_ver" layoutX="232.0" layoutY="555.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="187.0" style="-fx-background-color: #05396b;" text="Изменить цитаты группы" textFill="#fafafa">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
+      <AnchorPane layoutX="699.0" prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;" />
+      <TableView fx:id="table_ver" layoutX="155.0" layoutY="41.0" prefHeight="115.0" prefWidth="540.0">
+         <columns>
+            <TableColumn fx:id="qoute_surname_ver" prefWidth="47.20001220703125" text="Фамилия" />
+            <TableColumn fx:id="first_name_ver" prefWidth="50.39996337890625" text="Имя" />
+            <TableColumn fx:id="second_name_ver" prefWidth="46.39996337890625" text="Отчество" />
+            <TableColumn fx:id="subject_ver" prefWidth="59.199951171875" text="Предмет" />
+            <TableColumn fx:id="data_ver" prefWidth="43.99993896484375" text="Дата" />
+            <TableColumn fx:id="quote_ver" prefWidth="251.19998168945312" text="Цитата" />
+            <TableColumn fx:id="id_ver" prefWidth="43.20001220703125" text="id" />
+         </columns>
+      </TableView>
+      <Button fx:id="quote_add_ver" layoutX="307.0" layoutY="277.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Добавить цитату" textFill="#fafafa">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="sur_q_ver" layoutX="154.0" layoutY="168.0" prefHeight="26.0" prefWidth="123.0" promptText="Фамилия" style="-fx-text-fill: #fafafa; -fx-background-color: #05396b;">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="first_name_q_ver" layoutX="286.0" layoutY="168.0" prefHeight="26.0" prefWidth="123.0" promptText="Имя" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="second_name_q_ver" layoutX="420.0" layoutY="168.0" prefHeight="26.0" prefWidth="123.0" promptText="Отчество" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="subject_q_ver" layoutX="154.0" layoutY="204.0" prefHeight="26.0" prefWidth="123.0" promptText="Предмет" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="quote_q_ver" layoutX="155.0" layoutY="240.0" prefHeight="26.0" prefWidth="540.0" promptText="Цитата" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
     </children>
 </AnchorPane>
