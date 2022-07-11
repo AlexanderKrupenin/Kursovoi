@@ -21,5 +21,4 @@ public class BD {
     public static final String QUOTE_PEOPLE = "id_people";
     public static final String QUOTE_TABLE = "quote";
 
-
 }

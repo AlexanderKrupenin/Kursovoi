@@ -13,6 +13,86 @@
         <AnchorPane prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
             <children>
                 <Label fx:id="text_1_admin" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
+            <Label fx:id="text_4_admin" layoutX="10.0" layoutY="32.0" prefHeight="27.0" prefWidth="130.0" text="Изменение своих данных" textFill="#fafafa">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="make_new_surname_admin" layoutX="5.0" layoutY="64.0" prefHeight="26.0" prefWidth="142.0" promptText="Фамилия" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_first_name_admin" layoutX="4.0" layoutY="98.0" prefHeight="26.0" prefWidth="141.0" promptText="Имя" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_new_second_name_admin" layoutX="5.0" layoutY="131.0" prefHeight="26.0" prefWidth="141.0" promptText="Отчество" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_new_login_admin" layoutX="4.0" layoutY="165.0" prefHeight="26.0" prefWidth="141.0" promptText="Логин" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_new_password_admin" layoutX="4.0" layoutY="199.0" prefHeight="26.0" prefWidth="141.0" promptText="Пароль" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+              <Button fx:id="fio_red_admin" layoutX="5.0" layoutY="232.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #fafafa; -fx-text-fill: #05396b;" text="Редактировать свои данные" textFill="#fafafa">
+                  <font>
+                      <Font size="10.0" />
+                  </font>
+              </Button>
+            <TextField fx:id="make_new_surname_user" layoutX="5.0" layoutY="374.0" prefHeight="26.0" prefWidth="142.0" promptText="Фамилия" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_new_first_name_user" layoutX="4.0" layoutY="408.0" prefHeight="26.0" prefWidth="141.0" promptText="Имя" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_new_second_name_user" layoutX="5.0" layoutY="441.0" prefHeight="26.0" prefWidth="141.0" promptText="Отчество" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_new_login_user" layoutX="4.0" layoutY="475.0" prefHeight="26.0" prefWidth="141.0" promptText="Логин" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_new_password_user" layoutX="4.0" layoutY="509.0" prefHeight="26.0" prefWidth="141.0" promptText="Пароль" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="make_new_id_user" layoutX="5.0" layoutY="337.0" prefHeight="26.0" prefWidth="142.0" promptText="id" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <Label fx:id="text_5_admin" layoutX="25.0" layoutY="300.0" prefHeight="18.0" prefWidth="102.0" text="Изменение данных" textFill="#fafafa">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="text_6_admin" layoutX="33.0" layoutY="319.0" prefHeight="18.0" prefWidth="81.0" text="пользователей" textFill="#fafafa">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Button fx:id="new_fio_red_user" layoutX="2.0" layoutY="541.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #fafafa; -fx-text-fill: #05396b;" text="Редактировать данные" textFill="#fafafa">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
         <Label fx:id="text_3_admin" layoutX="259.0" layoutY="14.0" text="Вы зашли в роли суперпользователя" textFill="#05396b">
@@ -25,17 +105,71 @@
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="quote_add_admin" layoutX="307.0" layoutY="285.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Добавить цитату" textFill="#fafafa">
+        <Button fx:id="quote_add_admin" layoutX="313.0" layoutY="246.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Добавить цитату" textFill="#fafafa">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="fio_red_admin" layoutX="228.0" layoutY="549.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="208.0" style="-fx-background-color: #05396b;" text="Редактировать свои данные" textFill="#fafafa">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Button>
-      <AnchorPane layoutX="699.0" prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;" />
+      <AnchorPane layoutX="699.0" prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
+         <children>
+            <Label fx:id="count_first_metod_admin" layoutX="4.0" layoutY="19.0" prefHeight="18.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" textFill="#05396b" />
+            <Label fx:id="text_7_admin" layoutX="4.0" prefHeight="18.0" prefWidth="142.0" text="Количество ваших записей" textFill="#fafafa">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="qoute_new_surname" layoutX="5.0" layoutY="374.0" prefHeight="26.0" prefWidth="142.0" promptText="Фамилия" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="qoute_new_first_name" layoutX="4.0" layoutY="408.0" prefHeight="26.0" prefWidth="141.0" promptText="Имя" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="qoute_new_second_name" layoutX="5.0" layoutY="441.0" prefHeight="26.0" prefWidth="141.0" promptText="Отчество" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="qoute_new_subject" layoutX="4.0" layoutY="475.0" prefHeight="26.0" prefWidth="141.0" promptText="Предмет" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="qoute_new_text" layoutX="4.0" layoutY="509.0" prefHeight="26.0" prefWidth="141.0" promptText="Цитата" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="qoute_new_id" layoutX="5.0" layoutY="337.0" prefHeight="26.0" prefWidth="142.0" promptText="id цитаты" style="-fx-text-fill: #05396b; -fx-background-color: #fafafa;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <Label fx:id="text_10_admin" layoutX="25.0" layoutY="300.0" prefHeight="18.0" prefWidth="102.0" text="Изменение цитат" textFill="#fafafa">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="text_11_admin" layoutX="33.0" layoutY="319.0" prefHeight="18.0" prefWidth="81.0" text="пользователей" textFill="#fafafa">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Button fx:id="qoute_new_button" layoutX="2.0" layoutY="541.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #fafafa; -fx-text-fill: #05396b;" text="Редактировать цитату" textFill="#fafafa">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button fx:id="count_button_admin" layoutX="4.0" layoutY="232.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" text="Количество ваших записей" textFill="#05396b">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Label fx:id="count_label_button_admin" layoutX="5.0" layoutY="272.0" prefHeight="18.0" prefWidth="142.0" style="-fx-background-color: #fafafa;" textFill="#05396b" visible="false" />
+         </children></AnchorPane>
       <TableView fx:id="table_admin" layoutX="155.0" layoutY="49.0" prefHeight="115.0" prefWidth="540.0">
          <columns>
             <TableColumn fx:id="qoute_surname_admin" prefWidth="56.79998779296875" text="Фамилия" />
@@ -53,25 +187,42 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="first_name_q" layoutX="286.0" layoutY="176.0" prefHeight="26.0" prefWidth="123.0" promptText="Имя" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+      <TextField fx:id="first_name_q" layoutX="294.0" layoutY="176.0" prefHeight="26.0" prefWidth="123.0" promptText="Имя" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="second_name_q" layoutX="420.0" layoutY="176.0" prefHeight="26.0" prefWidth="123.0" promptText="Отчество" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+      <TextField fx:id="second_name_q" layoutX="434.0" layoutY="176.0" prefHeight="26.0" prefWidth="123.0" promptText="Отчество" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="subject_q" layoutX="154.0" layoutY="212.0" prefHeight="26.0" prefWidth="123.0" promptText="Предмет" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+      <TextField fx:id="subject_q" layoutX="571.0" layoutY="176.0" prefHeight="26.0" prefWidth="123.0" promptText="Предмет" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="quote_q" layoutX="155.0" layoutY="248.0" prefHeight="26.0" prefWidth="540.0" promptText="Цитата" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
+      <TextField fx:id="quote_q" layoutX="155.0" layoutY="212.0" prefHeight="26.0" prefWidth="540.0" promptText="Цитата" style="-fx-background-color: #05396b; -fx-text-fill: #fafafa;">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
+      <TableView fx:id="table_people" layoutX="155.0" layoutY="300.0" prefHeight="137.0" prefWidth="540.0">
+        <columns>
+          <TableColumn fx:id="colum_surname" prefWidth="75.0" text="Фамилия" />
+            <TableColumn fx:id="colum_first_name" prefWidth="75.0" text="Имя" />
+            <TableColumn fx:id="colum_second_name" prefWidth="75.0" text="Отчество" />
+            <TableColumn fx:id="colum_login" prefWidth="75.0" text="Логин" />
+            <TableColumn fx:id="colum_password" prefWidth="75.0" text="Пароль" />
+          <TableColumn fx:id="colum_id" prefWidth="31.20001220703125" text="id" />
+            <TableColumn fx:id="colum_user" prefWidth="60.7999267578125" text="Роль" />
+            <TableColumn fx:id="colum_group" prefWidth="75.0" text="Группа" />
+        </columns>
+      </TableView>
+      <Label fx:id="text_3_admin1" layoutX="359.0" layoutY="276.0" text="Пользователи" textFill="#05396b">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

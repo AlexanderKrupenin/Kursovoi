@@ -118,15 +118,17 @@ public class Controller {
                 String root;
                 ResultSet reg;
                 try {
-                    reg = statement.executeQuery("SELECT login_name,password,user FROM People");
+                    reg = statement.executeQuery("SELECT login_name,password,user,id FROM People");
 
                     while (reg.next()) {
                         int i = 1;
                         log = reg.getString(1);
                         pass = reg.getString(2);
                         root = reg.getString(3);
+                        SaveLogin.ID =reg.getString(4);
                         if (log.equals(login) && pass.equals(newPassword)) {
                             SaveLogin saveLogin = new SaveLogin(login);
+
                             System.out.println("Успешно");
                             if (root.equals("student"))
                                 ChangeScene("student.fxml");
