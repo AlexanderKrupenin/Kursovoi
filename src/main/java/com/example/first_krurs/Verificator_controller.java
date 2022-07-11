@@ -191,12 +191,16 @@ public class Verificator_controller {
         fio_red_ver.setOnAction(actionEvent -> {
             ChangeInfoAdmin();
         });
-        GetQuoteFromDataBase();
-        EditInfoAdmin();
+
         qoute_new_button_ver.setOnAction(actionEvent -> {
             ChangeInfoGroupAndYou();
         });
-        Count();
+        if(SaveLogin.ReadPerm.contains("+"))
+        {
+            GetQuoteFromDataBase();
+            EditInfoAdmin();
+            Count();
+        }
 
     }
 
@@ -277,7 +281,7 @@ public class Verificator_controller {
 
     public void ChangeInfoGroupAndYou()
     {
-        if (SaveLogin.EditPerm.equals("+")) {
+        if (SaveLogin.EditPerm.contains("+")) {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection connection = DriverManager.getConnection(
@@ -477,7 +481,7 @@ public class Verificator_controller {
 
     private void AddInfoToDataBase()
     {
-        if (SaveLogin.WritePerm.equals("+")) {
+        if (SaveLogin.WritePerm.contains("+")) {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection connection = DriverManager.getConnection(

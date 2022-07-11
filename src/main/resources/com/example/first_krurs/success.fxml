@@ -19,7 +19,7 @@
             </font>
         </Button>
       <AnchorPane layoutX="365.0" prefHeight="174.0" prefWidth="150.0" style="-fx-background-color: #05396b;" />
-      <CheckBox fx:id="check_read" layoutX="164.0" layoutY="21.0" mnemonicParsing="false" selected="true" text="Чтение" />
+      <CheckBox fx:id="check_read" layoutX="164.0" layoutY="21.0" mnemonicParsing="false" text="Чтение" />
       <CheckBox fx:id="check_write" layoutX="164.0" layoutY="50.0" mnemonicParsing="false" text="Запись" />
       <CheckBox fx:id="check_edit" layoutX="164.0" layoutY="77.0" mnemonicParsing="false" text="Изменение" />
       <Button fx:id="save_button" layoutX="160.0" layoutY="102.0" mnemonicParsing="false" text="Сохранить" textFill="#05396b" />
