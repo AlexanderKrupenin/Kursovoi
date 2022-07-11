@@ -141,7 +141,11 @@ public class Student_controller {
             student_back_student.getScene().getWindow().hide();
             Main.guest_window.show();
         });
-        Count();
+        if (SaveLogin.ReadPerm.contains("+")) {
+            Count();
+            GetQuoteFromDataBase();
+            EditInfoAdmin();
+        }
         count_button_student.setOnAction(actionEvent -> {
             CountBtn();
         });
@@ -152,8 +156,7 @@ public class Student_controller {
         quote_add_student.setOnAction(actionEvent -> {
             AddInfoToDataBase();
         });
-        GetQuoteFromDataBase();
-        EditInfoAdmin();
+
 
         qoute_new_button_student.setOnAction(actionEvent -> {
             ChangeUserQuote();
@@ -162,43 +165,45 @@ public class Student_controller {
 
     public void ChangeUserQuote()
     {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://std-mysql.ist.mospolytech.ru:3306/std_2008_kursovoi",
-                    "std_2008_kursovoi", "12345678");
+        if (SaveLogin.EditPerm.contains("+")) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:mysql://std-mysql.ist.mospolytech.ru:3306/std_2008_kursovoi",
+                        "std_2008_kursovoi", "12345678");
 
-            Statement statement = connection.createStatement();
-            ResultSet idshka;
-            String newID = "";
-            idshka = statement.executeQuery("SELECT id_people from quote\nWhere quote_id = '"+qoute_new_id_student.getText()+ "'");
-            while (idshka.next())
-            {
-                newID = idshka.getString(1);
-            }
-            if (SaveLogin.ID.equals(newID)) {
-                try {
-                    int count = statement.executeUpdate("update quote\n" +
-                            "set\n" +
-                            "quote_surname = '" + qoute_new_surname_student.getText() + "',\n" +
-                            "quote_first_name = '" + qoute_new_first_name_student.getText() + "',\n" +
-                            "quote_second_name = '" + qoute_new_second_name_student.getText() + "',\n" +
-                            "quote_subject = '" + qoute_new_subject_student.getText() + "',\n" +
-                            "quote_text = '" + qoute_new_text_student.getText() + "'\n" +
-                            "where quote_id = '" + qoute_new_id_student.getText() + "'");
-                    System.out.println("Строк изменено " + count);
-                    table_user.getItems().clear();
-                    GetQuoteFromDataBase();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                Statement statement = connection.createStatement();
+                ResultSet idshka;
+                String newID = "";
+                idshka = statement.executeQuery("SELECT id_people from quote\nWhere quote_id = '" + qoute_new_id_student.getText() + "'");
+                while (idshka.next()) {
+                    newID = idshka.getString(1);
                 }
+                if (SaveLogin.ID.equals(newID)) {
+                    try {
+                        int count = statement.executeUpdate("update quote\n" +
+                                "set\n" +
+                                "quote_surname = '" + qoute_new_surname_student.getText() + "',\n" +
+                                "quote_first_name = '" + qoute_new_first_name_student.getText() + "',\n" +
+                                "quote_second_name = '" + qoute_new_second_name_student.getText() + "',\n" +
+                                "quote_subject = '" + qoute_new_subject_student.getText() + "',\n" +
+                                "quote_text = '" + qoute_new_text_student.getText() + "'\n" +
+                                "where quote_id = '" + qoute_new_id_student.getText() + "'");
+                        System.out.println("Строк изменено " + count);
+                        table_user.getItems().clear();
+                        GetQuoteFromDataBase();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
 
+                } else {
+                    System.out.println("Ошибка");
+                }
+                connection.close();
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            else{System.out.println("Ошибка");}
-            connection.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        }else System.out.println("У вас нет прав");
     }
 
     public void Count()
@@ -297,36 +302,36 @@ public class Student_controller {
 
     public void EditInfoAdmin()
     {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://std-mysql.ist.mospolytech.ru:3306/std_2008_kursovoi",
-                    "std_2008_kursovoi", "12345678");
+        if (SaveLogin.EditPerm.contains("+")) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:mysql://std-mysql.ist.mospolytech.ru:3306/std_2008_kursovoi",
+                        "std_2008_kursovoi", "12345678");
 
-            ResultSet GetInfo;
-            Statement statement = connection.createStatement();
+                ResultSet GetInfo;
+                Statement statement = connection.createStatement();
 
-            try{
+                try {
 
 
-                GetInfo = statement.executeQuery("select * from People\n where login_name = '" +SaveLogin.login +"'");
-                while (GetInfo.next()){
-                    make_first_name_student.setText(GetInfo.getString(2));
-                    make_new_login_student.setText(GetInfo.getString(4));
-                    make_new_second_name_student.setText(GetInfo.getString(3));
-                    make_new_surname_student.setText(GetInfo.getString(1));
+                    GetInfo = statement.executeQuery("select * from People\n where login_name = '" + SaveLogin.login + "'");
+                    while (GetInfo.next()) {
+                        make_first_name_student.setText(GetInfo.getString(2));
+                        make_new_login_student.setText(GetInfo.getString(4));
+                        make_new_second_name_student.setText(GetInfo.getString(3));
+                        make_new_surname_student.setText(GetInfo.getString(1));
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
 
-            }
-            catch (SQLException e)
-            {
-                e.printStackTrace();
-            }
 
-
-            connection.close();
-        } catch (Exception e) {
-            System.out.println(e);
+                connection.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
 
     }
@@ -378,65 +383,66 @@ public class Student_controller {
 
     private void AddInfoToDataBase()
     {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://std-mysql.ist.mospolytech.ru:3306/std_2008_kursovoi",
-                    "std_2008_kursovoi", "12345678");
-
-            ResultSet SetInfo;
-            ResultSet GetID;
-            PreparedStatement reg = null;
-            Statement statement = connection.createStatement();
-            ResultSet count;
-            ResultSet id_save;
-            int PeopleID = 0;
-            int id_registr_people = 0;
-            int check = 0;
+        if (SaveLogin.WritePerm.contains("+")) {
             try {
-                count = statement.executeQuery("SELECT COUNT(*) FROM quote");
-                while (count.next())
-                    check = count.getInt(1);
-                if (check != 0) {
-                    id_save = statement.executeQuery("SELECT MAX(quote_id) FROM quote");
-                    while (id_save.next()) {
-                        id_registr_people = id_save.getInt(1) + 1;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:mysql://std-mysql.ist.mospolytech.ru:3306/std_2008_kursovoi",
+                        "std_2008_kursovoi", "12345678");
+
+                ResultSet SetInfo;
+                ResultSet GetID;
+                PreparedStatement reg = null;
+                Statement statement = connection.createStatement();
+                ResultSet count;
+                ResultSet id_save;
+                int PeopleID = 0;
+                int id_registr_people = 0;
+                int check = 0;
+                try {
+                    count = statement.executeQuery("SELECT COUNT(*) FROM quote");
+                    while (count.next())
+                        check = count.getInt(1);
+                    if (check != 0) {
+                        id_save = statement.executeQuery("SELECT MAX(quote_id) FROM quote");
+                        while (id_save.next()) {
+                            id_registr_people = id_save.getInt(1) + 1;
+                        }
+                    } else id_registr_people = 1;
+                    String savelogin = SaveLogin.login;
+                    GetID = statement.executeQuery("SELECT id FROM People WHERE login_name = '" + savelogin + "'");
+                    while (GetID.next()) {
+                        PeopleID = GetID.getInt(1);
                     }
-                } else id_registr_people = 1;
-                String savelogin = SaveLogin.login;
-                GetID = statement.executeQuery("SELECT id FROM People WHERE login_name = '" + savelogin + "'");
-                while (GetID.next()){
-                    PeopleID = GetID.getInt(1);
+                    reg = connection.prepareStatement("INSERT INTO " + BD.QUOTE_TABLE + "(" + BD.QUOTE_ID + "," + BD.QUOTE_SURNAME
+                            + "," + BD.QUOTE_FIRST_NAME + "," + BD.QUOTE_SECOND_NAME + "," +
+                            BD.QUOTE_SUBJECT + "," + BD.QUOTE_DATA + "," + BD.QUOTE_TEXT + "," +
+                            BD.QUOTE_PEOPLE + ",  quote_group)" + "VALUES(?,?,?,?,?,?,?,?,?)");
+                    java.util.Date d = new Date();
+
+                    reg.setInt(1, id_registr_people);
+                    reg.setString(2, sur_q_student.getText());
+                    reg.setString(3, first_name_q_student.getText());
+                    reg.setString(4, second_name_q_student.getText());
+                    reg.setString(5, subject_q_student.getText());
+                    reg.setString(6, d.toString());
+                    reg.setString(7, quote_q_student.getText());
+                    reg.setInt(8, PeopleID);
+                    reg.setString(9, SaveLogin.Group);
+                    reg.executeUpdate();
+
+                    table_user.getItems().clear();
+                    GetQuoteFromDataBase();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                reg = connection.prepareStatement("INSERT INTO "+ BD.QUOTE_TABLE +"(" + BD.QUOTE_ID+ "," + BD.QUOTE_SURNAME
-                        +","+ BD.QUOTE_FIRST_NAME+ "," + BD.QUOTE_SECOND_NAME + ","+
-                        BD.QUOTE_SUBJECT + ","+ BD.QUOTE_DATA + "," + BD.QUOTE_TEXT + "," +
-                        BD.QUOTE_PEOPLE + ",  quote_group)" + "VALUES(?,?,?,?,?,?,?,?,?)");
-                java.util.Date d = new Date();
 
-                reg.setInt(1, id_registr_people);
-                reg.setString(2, sur_q_student.getText());
-                reg.setString(3, first_name_q_student.getText());
-                reg.setString(4, second_name_q_student.getText());
-                reg.setString(5, subject_q_student.getText());
-                reg.setString(6, d.toString());
-                reg.setString(7, quote_q_student.getText());
-                reg.setInt(8,PeopleID);
-                reg.setString(9,SaveLogin.Group);
-                reg.executeUpdate();
-
-                table_user.getItems().clear();
-                GetQuoteFromDataBase();
+                //ResultSet result = statement.executeQuery(query);
+                connection.close();
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            catch (Exception e){
-                e.printStackTrace();
-            }
-
-            //ResultSet result = statement.executeQuery(query);
-            connection.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        }else System.out.println("У вас нет прав");
     }
 
     public class GetUserClassStudent  {

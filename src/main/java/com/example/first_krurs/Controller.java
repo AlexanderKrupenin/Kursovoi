@@ -118,7 +118,7 @@ public class Controller {
                 String root;
                 ResultSet reg;
                 try {
-                    reg = statement.executeQuery("SELECT login_name,password,user,id,group_people FROM People");
+                    reg = statement.executeQuery("SELECT login_name,password,user,id,group_people,edit,write_people,read_people FROM People");
 
                     while (reg.next()) {
                         int i = 1;
@@ -127,6 +127,10 @@ public class Controller {
                         root = reg.getString(3);
                         SaveLogin.ID =reg.getString(4);
                         SaveLogin.Group = reg.getString(5);
+                        SaveLogin.EditPerm = reg.getString(6);
+                        SaveLogin.WritePerm = reg.getString(7);
+                        SaveLogin.ReadPerm = reg.getString(8);
+
                         if (log.equals(login) && pass.equals(newPassword)) {
                             SaveLogin saveLogin = new SaveLogin(login);
 
@@ -137,6 +141,7 @@ public class Controller {
                                 ChangeScene("admin.fxml");
                             else if (root.equals("ver"))
                                 ChangeScene("verificator.fxml");
+
                             break;
                         } else error.setVisible(true);
                     }

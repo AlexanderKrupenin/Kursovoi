@@ -68,6 +68,9 @@ public class Success_controller {
                     "write_people = '" + write + "\n'," +
                     "read_people = '" + read + "'\n" +
                     "where id = '" + SaveLogin.SaveID + "'");
+            SaveLogin.EditPerm = edit;
+            SaveLogin.ReadPerm = read;
+            SaveLogin.WritePerm = write;
 
             //ResultSet result = statement.executeQuery(query);
             connection.close();
@@ -75,6 +78,4 @@ public class Success_controller {
             System.out.println(e);
         }
     }
-
-
 }

@@ -5,6 +5,9 @@ public class SaveLogin {
     public static String ID;
     public static String Group;
     public static String SaveID;
+    public static String ReadPerm;
+    public static String WritePerm;
+    public static String EditPerm;
 
     public SaveLogin(String login) {
         this.login = login;
