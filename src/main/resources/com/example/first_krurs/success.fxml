@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Success_controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.first_krurs.Success_controller">
     <children>
-        <AnchorPane prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
+        <AnchorPane prefHeight="174.0" prefWidth="150.0" style="-fx-background-color: #05396b;">
             <children>
                 <Label fx:id="text_1_s" layoutX="20.0" layoutY="14.0" text="Курсовой проект" textFill="#fafafa" />
             </children>
         </AnchorPane>
-        <Label fx:id="text_3_s" layoutX="302.0" layoutY="129.0" text="Успешно✓" textFill="#05396b">
-            <font>
-                <Font size="48.0" />
-            </font>
-        </Label>
-        <Button fx:id="s_back_s" layoutX="157.0" layoutY="360.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
+        <Button fx:id="s_back_s" layoutX="157.0" layoutY="140.0" mnemonicParsing="false" style="-fx-background-color: #05396b;" text="Назад" textFill="#fafafa">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-      <AnchorPane layoutX="699.0" prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: #05396b;" />
+      <AnchorPane layoutX="365.0" prefHeight="174.0" prefWidth="150.0" style="-fx-background-color: #05396b;" />
+      <CheckBox fx:id="check_read" layoutX="164.0" layoutY="21.0" mnemonicParsing="false" selected="true" text="Чтение" />
+      <CheckBox fx:id="check_write" layoutX="164.0" layoutY="50.0" mnemonicParsing="false" text="Запись" />
+      <CheckBox fx:id="check_edit" layoutX="164.0" layoutY="77.0" mnemonicParsing="false" text="Изменение" />
+      <Button fx:id="save_button" layoutX="160.0" layoutY="102.0" mnemonicParsing="false" text="Сохранить" textFill="#05396b" />
     </children>
 </AnchorPane>

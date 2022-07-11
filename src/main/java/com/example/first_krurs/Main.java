@@ -12,6 +12,7 @@ public class Main extends Application {
     public static Stage admin_window;
     public static Stage add_window;
     public static Stage ver_window;
+    public static Stage table_people;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -25,6 +26,7 @@ public class Main extends Application {
         admin_window = stage;
         ver_window = stage;
         add_window = stage;
+        table_people = stage;
         stage.show();
     }
     public static void main(String[] args) {

@@ -20,6 +20,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Admin_controller {
@@ -215,6 +216,24 @@ public class Admin_controller {
         qoute_new_second_name.setVisible(false);
         qoute_new_surname.setVisible(false);
         qoute_new_text.setVisible(false);
+
+        table_people.setOnMouseClicked((MouseEvent event) ->{
+            table_people.getScene().getWindow().hide();
+            SaveLogin.SaveID = table_people.getSelectionModel().getSelectedItem().getId();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("success.fxml"));
+            System.out.println("Вы выбрали " + table_people.getSelectionModel().getSelectedItem().getFirst_name());
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            //stage.setResizable(false);
+            stage.showAndWait();
+        });
 
         qoute_new_id.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -651,7 +670,7 @@ public class Admin_controller {
                 reg = connection.prepareStatement("INSERT INTO "+ BD.QUOTE_TABLE +"(" + BD.QUOTE_ID+ "," + BD.QUOTE_SURNAME
                        +","+ BD.QUOTE_FIRST_NAME+ "," + BD.QUOTE_SECOND_NAME + ","+
                         BD.QUOTE_SUBJECT + ","+ BD.QUOTE_DATA + "," + BD.QUOTE_TEXT + "," +
-                        BD.QUOTE_PEOPLE + ")" + "VALUES(?,?,?,?,?,?,?,?)");
+                        BD.QUOTE_PEOPLE + ", quote_group)" + "VALUES(?,?,?,?,?,?,?,?,?)");
 
                 Date d = new Date();
 
@@ -663,6 +682,7 @@ public class Admin_controller {
                 reg.setString(6, d.toString());
                 reg.setString(7, quote_q.getText());
                 reg.setInt(8,PeopleID);
+                reg.setString(9,SaveLogin.Group);
                 reg.executeUpdate();
 
                 table_admin.getItems().clear();

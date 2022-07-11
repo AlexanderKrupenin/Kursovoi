@@ -411,7 +411,7 @@ public class Student_controller {
                 reg = connection.prepareStatement("INSERT INTO "+ BD.QUOTE_TABLE +"(" + BD.QUOTE_ID+ "," + BD.QUOTE_SURNAME
                         +","+ BD.QUOTE_FIRST_NAME+ "," + BD.QUOTE_SECOND_NAME + ","+
                         BD.QUOTE_SUBJECT + ","+ BD.QUOTE_DATA + "," + BD.QUOTE_TEXT + "," +
-                        BD.QUOTE_PEOPLE + ")" + "VALUES(?,?,?,?,?,?,?,?)");
+                        BD.QUOTE_PEOPLE + ",  quote_group)" + "VALUES(?,?,?,?,?,?,?,?,?)");
                 java.util.Date d = new Date();
 
                 reg.setInt(1, id_registr_people);
@@ -422,6 +422,7 @@ public class Student_controller {
                 reg.setString(6, d.toString());
                 reg.setString(7, quote_q_student.getText());
                 reg.setInt(8,PeopleID);
+                reg.setString(9,SaveLogin.Group);
                 reg.executeUpdate();
 
                 table_user.getItems().clear();

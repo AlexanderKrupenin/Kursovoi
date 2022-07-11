@@ -118,7 +118,7 @@ public class Controller {
                 String root;
                 ResultSet reg;
                 try {
-                    reg = statement.executeQuery("SELECT login_name,password,user,id FROM People");
+                    reg = statement.executeQuery("SELECT login_name,password,user,id,group_people FROM People");
 
                     while (reg.next()) {
                         int i = 1;
@@ -126,6 +126,7 @@ public class Controller {
                         pass = reg.getString(2);
                         root = reg.getString(3);
                         SaveLogin.ID =reg.getString(4);
+                        SaveLogin.Group = reg.getString(5);
                         if (log.equals(login) && pass.equals(newPassword)) {
                             SaveLogin saveLogin = new SaveLogin(login);
 

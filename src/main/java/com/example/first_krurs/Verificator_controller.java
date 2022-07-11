@@ -194,9 +194,8 @@ public class Verificator_controller {
         GetQuoteFromDataBase();
         EditInfoAdmin();
         qoute_new_button_ver.setOnAction(actionEvent -> {
-            //ChangeInfoGroupAndYou();
+            ChangeInfoGroupAndYou();
         });
-        GetDataOnlyGroup();
         Count();
 
     }
@@ -210,24 +209,21 @@ public class Verificator_controller {
                     "std_2008_kursovoi", "12345678");
 
             ResultSet GetInfo;
+            int i = 0;
             Statement statement = connection.createStatement();
             String group= "";
             ResultSet query2;
-            ResultSet grupka = statement.executeQuery("SELECT group_people from People\nWhere id = '"+SaveLogin.ID+"'");
-            while (grupka.next())
-                group = grupka.getString(1);
-            ResultSet query1 = statement.executeQuery("Select id from People\nWhere group_people = '" + group +"'");
-                while (query1.next())
-                {
-                    query2 = statement.executeQuery("Select * from quote\nWhere id_people = '" + query1.getString(1) + "'");
-                    while (query2.next()){
-                        usersData.add(new GetUserClassVer(/*Айди*/query2.getString(1),/*Фамилия*/query2.getString(2),
-                                /*Имя*/query2.getString(3),/*Отчество*/query2.getString(4),
-                                /*Предмет*/query2.getString(5), /*Дата*/query2.getString(6),
-                                /*Цитата*/query2.getString(7), query2.getString(8)));
-                        SetQuoteAll();
-                    }
-                }
+            query2 = statement.executeQuery("Select * from quote");
+            while (query2.next()) {
+                usersData.add(new GetUserClassVer(/*Айди*/query2.getString(1),/*Фамилия*/query2.getString(2),
+                        /*Имя*/query2.getString(3),/*Отчество*/query2.getString(4),
+                        /*Предмет*/query2.getString(5), /*Дата*/query2.getString(6),
+                        /*Цитата*/query2.getString(7), query2.getString(8)));
+                i++;
+                SetQuoteAll();
+            }
+
+            System.out.println(i);
 
 
 
@@ -434,14 +430,14 @@ public class Verificator_controller {
     }
 
     public void SetQuoteAll(){
-        first_name_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("first_name"));
-        data_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("date"));
-        id_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("id"));
-        qoute_surname_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("surname"));
-        quote_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("quote"));
-        second_name_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("second_name"));
+        first_name_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("first_name1"));
+        data_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("date1"));
+        id_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("id1"));
+        qoute_surname_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("surname1"));
+        quote_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("quote1"));
+        second_name_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("second_name1"));
         subject_ver_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("subject"));
-        id_ver_last_colom_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("PeopleID"));
+        id_ver_last_colom_all.setCellValueFactory(new PropertyValueFactory<GetUserClassVerAll,String>("PeopleID1"));
         table_people.setItems(usersdata);
     }
     public void GetQuoteFromDataBase()
@@ -463,16 +459,12 @@ public class Verificator_controller {
                             /*Предмет*/GetInfo.getString(5), /*Дата*/GetInfo.getString(6),
                             /*Цитата*/GetInfo.getString(7), GetInfo.getString(8)));
                     SetQuoteTo();
-
                 }
-
-
             }
             catch (SQLException e)
             {
                 e.printStackTrace();
             }
-
 
             //ResultSet result = statement.executeQuery(query);
             connection.close();
@@ -516,7 +508,7 @@ public class Verificator_controller {
                 reg = connection.prepareStatement("INSERT INTO "+ BD.QUOTE_TABLE +"(" + BD.QUOTE_ID+ "," + BD.QUOTE_SURNAME
                         +","+ BD.QUOTE_FIRST_NAME+ "," + BD.QUOTE_SECOND_NAME + ","+
                         BD.QUOTE_SUBJECT + ","+ BD.QUOTE_DATA + "," + BD.QUOTE_TEXT + "," +
-                        BD.QUOTE_PEOPLE + ")" + "VALUES(?,?,?,?,?,?,?,?)");
+                        BD.QUOTE_PEOPLE + ", quote_group)" + "VALUES(?,?,?,?,?,?,?,?,?)");
 
                 Date d = new Date();
 
@@ -526,8 +518,9 @@ public class Verificator_controller {
                 reg.setString(4, second_name_q_ver.getText());
                 reg.setString(5, subject_q_ver.getText());
                 reg.setString(6, d.toString());
-                reg.setString(7, quote_q_ver.getText());
+                reg.setString(7,quote_q_ver.getText());
                 reg.setInt(8,PeopleID);
+                reg.setString(9,SaveLogin.Group);
                 reg.executeUpdate();
 
                 table_ver.getItems().clear();

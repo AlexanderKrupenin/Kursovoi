@@ -41,7 +41,7 @@ public class VPN {
                     BD.USER_SURNAME + "," + BD.USER_FIRST_NAME
                     + "," + BD.USER_SECOND_NAME + "," + BD.USER_LOGIN_NAME
                     + "," + BD.USER_PASSWORD + "," + BD.USER_ID + "," + BD.USER_ROOT + "," + BD.USER_GROUP
-                    + ")" + " VALUES(?,?,?,?,?,?,?,?)";
+                    + ", edit, write_people, read_people)" + " VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
             try {
                 int check = 0;
@@ -76,6 +76,9 @@ public class VPN {
                     reg.setInt(6, id_registr_people);
                     reg.setString(7, root_registr_people);
                     reg.setString(8, group_registr_people);
+                    reg.setString(9,"null");
+                    reg.setString(10,"null");
+                    reg.setString(11,"+");
                     reg.executeUpdate();
                 }
                 else if (csharpluchse == 1){}
